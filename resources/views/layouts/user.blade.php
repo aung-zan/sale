@@ -5,6 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link rel="stylesheet" href="{{ asset('css/flexslider.css') }}" type="text/css" media="screen" />
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/easy-responsive-tabs.css') }}" />
     <!-- //css -->
 
     <!-- for-mobile-apps -->
@@ -83,7 +85,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- header section end -->
 
     <!-- content section start -->
-        <div class="main-banner banner text-center">
+        <div class="banner text-center">
             <div class="container">
                 <h1>Sell or Advertise   <span class="segment-heading">    anything online </span> with Resale</h1>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
@@ -91,8 +93,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
         </div>
 
-        <div class="content">
-            @yield('content')
+        <div class="categories-section main-grid-border">
+            <div class="container">
+                <h2 class="head">Main Categories</h2>
+                <div class="category-list">
+                    <div id="parentVerticalTab">
+
+                        <ul class="resp-tabs-list hor_1">
+                            <li>Profile</li>
+                            <li>Product</li>
+                        </ul>
+
+                        <div class="resp-tabs-container hor_1">
+                            @yield('content')
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     <!-- content section end -->
 

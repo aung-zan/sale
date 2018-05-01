@@ -1,3 +1,12 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+.custom-label {
+    text-transform: none !important;
+    text-align: left !important;
+}
+
+.label-align {
+    margin-left: 3%;
+}
