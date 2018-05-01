@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('user/index');
-});
+Route::get('/', 'User\UserHomeController@index')                        ->name('users.home');
 
-Auth::routes();
+Route::get('/login', 'Auth\UserLoginController@showLoginForm')          ->name('users.loginForm');
+Route::post('/login', 'Auth\UserLoginController@login')                 ->name('users.login');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/users', 'User\ProfileController', ['only' => ['show', 'edit', 'update']]);
+
+// Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home');

@@ -1,69 +1,52 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card card-default">
-                <div class="card-header">Login</div>
+    <div id="page-wrapper" class="sign-in-wrapper">
+        <div class="graphs">
+            <div class="sign-in-form">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                <div class="sign-in-form-top">
+                    <h1>Log in</h1>
+                </div>
+
+                <div class="signin">
+
+                    <div class="signin-rit">
+                        <span class="checkbox1">
+                             <label class="checkbox">Forgot Password ?</label>
+                        </span>
+                        <p><a href="#">Click Here</a> </p>
+                        <div class="clearfix"> </div>
+                    </div>
+
+                    <form method="POST" action="{{ route('users.login') }}">
                         @csrf
 
-                        <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="log-input">
+                            <div class="log-input-left">
+                               <input type="text" class="user" name="email" value="{{ (old('email') == null)? 'Your Email' : old('email') }}" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}"/>
                             </div>
+                            <div class="clearfix"> </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="log-input">
+                            <div class="log-input-left">
+                               <input type="password" class="lock" name="password" value="{{ (old('password') == null)? '' : old('password') }}" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/>
                             </div>
+                            <div class="clearfix"> </div>
                         </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
+                        <input type="submit" value="Log in">
                     </form>
+                </div>
+
+                <div class="new_people">
+                    <h2>For New People</h2>
+                    <p>Having hands on experience in creating innovative designs,I do offer design
+                        solutions which harness.</p>
+                    <a href=" ">Register Now!</a>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
