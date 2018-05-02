@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('users_id')                      ->comment('save user p.key.');
+            $table->bigInteger('user_id')                       ->comment('save user p.key.');
             $table->integer('main_categories')                  ->comment('save main categories.');
             $table->integer('sub_categories')                   ->comment('save sub categories.');
             $table->string('product_name')                      ->comment('save name of product.');
