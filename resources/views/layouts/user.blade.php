@@ -202,6 +202,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.leanModal.min.js') }}"></script>
     <script src="{{ asset('js/easyResponsiveTabs.js') }}"></script>
+    <script src="{{ asset('js/tabs.js') }}"></script>
 
     <link href="{{ asset('css/jquery.uls.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/jquery.uls.grid.css') }}" rel="stylesheet"/>

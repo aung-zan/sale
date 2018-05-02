@@ -22,10 +22,11 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        $user = User::findorFail($id);
-        $products = Product::where('deleted', 0)->get();
+        $states     = config('constants.states');
+        $user       = User::findorFail($id);
+        $products   = Product::where('deleted', 0)->get()->toArray();
 
-        return view('user.show', compact('user', 'products'));
+        return view('profile.show', compact('user', 'products', 'states'));
     }
 
     /**
@@ -36,7 +37,11 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $states     = config('constants.states');
+        $user       = User::findorFail($id);
+
+        return view('profile.edit', compact('user', 'states'));
+
     }
 
     /**
@@ -48,6 +53,21 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name'          => 'required',
+            'email'         => 'required|email',
+            'phone_number'  => 'required',
+        ]);
+
+        $user = User::findorFail($id);
+
+        if ($request->get('password') == null) {
+            $request = $request->except('password');
+        } else {
+            $request = $request->all();
+        }
+        $user->update($request);
+
+        return redirect()->route('users.show', $id);
     }
 }
