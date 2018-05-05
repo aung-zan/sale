@@ -41,6 +41,7 @@ $(document).ready(function () {
         }
     });
 
+    // user's posts index
     var elem=$('#container ul');
     $('#viewcontrols a').on('click',function(e) {
         if ($(this).hasClass('gridview')) {
@@ -61,5 +62,11 @@ $(document).ready(function () {
                 elem.fadeIn(1000);
             });
         }
+    });
+
+    // logout function
+    $('#logout').on('click', function(e) {
+        e.preventDefault();
+        $('#logoutForm').submit();
     });
 });

@@ -42,7 +42,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                 <!-- modal -->
                 <div class="selectregion">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Select Your Region</button>
+                    <a href="{{ route('users.logout') }}" class="btn btn-primary" id="logout">Logout</a>
+
+                    <form method="POST" action="{{ route('users.logout') }}" id="logoutForm">
+                        @csrf
+                    </form>
+
+                    <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Select Your Region</button>
 
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -77,7 +83,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -95,7 +101,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         <div class="categories-section main-grid-border">
             <div class="container">
-                <h2 class="head">Main Categories</h2>
+                <h2 class="head">Welcome! {{ Auth::user()->name }}</h2>
                 <div class="category-list">
                     <div id="parentVerticalTab">
 

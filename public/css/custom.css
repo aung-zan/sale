@@ -1,3 +1,4 @@
+/* fix scroll when open modal */
 ::-webkit-scrollbar {
     display: none;
 }
@@ -11,42 +12,69 @@
     margin-left: 3%;
 }
 
-/*style.css (3012)*/
-.input-design {
-    padding: 10px 10px 10px 10px !important;
-    width: 30% !important; /*origin 70%*/
-    margin-bottom: 25px !important;
-    border: 1px solid #01a185 !important;
-    outline: none !important;
-    color: #555 !important;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-    float: left !important;
-}
-
-.phone-design {
-    margin-left: 10%;
-}
-
-/*
- * style.css (4363)
- * for phone view
-*/
-@media (max-width: 480px) {
+/* for user's profile start */
     .input-design {
-        width: 100% !important;
+        padding: 10px 10px 10px 10px !important;
+        width: 30% !important; /*origin 70%*/
+        margin-bottom: 25px !important;
+        border: 1px solid #01a185 !important;
+        outline: none !important;
+        color: #555 !important;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        float: left !important;
     }
 
     .phone-design {
-        margin-bottom: 1em;
-        margin-left: 0%;
+        margin-left: 10%;
     }
 
-    .product-phone {
-        padding-right: unset;
-        padding-left: unset;
+    .label-design {
+        text-align: right;
     }
-}
+/* for user's profile end */
+
+/* for register form start */
+    .register-input-design {
+        outline: none !important;
+        border: 1px solid #01a185 !important;
+        background: none !important;
+        font-size: 15px !important;
+        padding: 10px 10px !important;
+        width: 100% !important;
+        margin: 1em 0 !important;
+    }
+
+    .regiester-lable-position {
+        margin-top: 15% !important;
+    }
+
+    .required-color {
+        color: red;
+    }
+
+    .error-message-design {
+        margin-left: 2%;
+    }
+/* for register form end */
+
+/* for phone view start */
+    @media (max-width: 480px) {
+        .input-design {
+            width: 100% !important;
+        }
+
+        .phone-design {
+            margin-bottom: 1em;
+            margin-left: 0%;
+        }
+
+        .product-phone {
+            padding-right: unset;
+            padding-left: unset;
+        }
+    }
+/* for phone view end */

@@ -24,7 +24,7 @@ class ProfileController extends Controller
     {
         $states     = config('constants.states');
         $user       = User::findorFail($id);
-        $products   = Product::where('deleted', 0)->get()->toArray();
+        $products   = Product::where('deleted', 0)->where('user_id', $id)->get()->toArray();
 
         return view('profile.show', compact('user', 'products', 'states'));
     }

@@ -9,58 +9,79 @@
                 </div>
                 <div class="clearfix"></div>
             </div>
+
             <div class="post-ad-form">
                 <form>
                     <div class="product-details">
-                        <p>
-                            <strong>Name : </strong>
-                            <strong class="label-align">{{ $user['name'] }}</strong>
-                        </p>
+                        <div class="col-md-3 col-sm-4 col-xs-5 label-design">
+                            <h4>Name : </h4>
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+                            <h4 class="label-align">{{ $user['name'] }}</h4>
+                        </div>
                     </div>
                     <div class="clearfix"></div>
 
                     <div class="product-details">
-                        <p>
-                            <strong>Email : </strong>
-                            <strong class="label-align">{{ $user['email'] }}</strong>
-                        </p>
+                        <div class="col-md-3 col-sm-4 col-xs-5 label-design">
+                            <h4>Email : </h4>
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+                            <h4 class="label-align">{{ $user['email'] }}</h4>
+                        </div>
                     </div>
                     <div class="clearfix"></div>
 
                     <div class="product-details">
-                        <p>
-                            <strong>Phone No : </strong>
-                            <strong class="label-align">{{ $user['phone_number'] }}</strong>
-                        </p>
+                        <div class="col-md-3 col-sm-4 col-xs-5 label-design">
+                            <h4>Phone No : </h4>
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+                            <h4 class="label-align">{{ $user['phone_number'] }}</h4>
+                        </div>
                     </div>
                     <div class="clearfix"></div>
 
                     <div class="product-details">
-                        <p>
-                            <strong>Premium : </strong>
-                            <strong class="label-align">{{ $user['premium'] }}</strong>
-                        </p>
+                        <div class="col-md-3 col-sm-4 col-xs-5 label-design">
+                            <h4>Premium : </h4>
+                        </div>
+
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+                            <h4 class="label-align">{{ $user['premium'] }}</h4>
+                        </div>
                     </div>
                     <div class="clearfix"></div>
 
                     <div class="product-details">
-                        <p>
-                            <strong>State : </strong>
-                            <strong class="label-align">{{ empty($user['state'])? '': $states[$user['state']] }}</strong>
-                        </p>
+                        <div class="col-md-3 col-sm-4 col-xs-5 label-design">
+                            <h4>State : </h4>
+                        </div>
+
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+                            <h4 class="label-align">{{ empty($user['state'])? '': $states[$user['state']] }}</h4>
+                        </div>
                     </div>
                     <div class="clearfix"></div>
 
                     <div class="product-details">
-                        <p>
-                            <strong>Township : </strong>
-                            <strong class="label-align">{{ $user['township'] }}</strong>
-                        </p>
+                        <div class="col-md-3 col-sm-4 col-xs-5 label-design">
+                            <h4>Township : </h4>
+                        </div>
+
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+                            <h4 class="label-align">{{ $user['township'] }}</h4>
+                        </div>
                     </div>
                     <div class="clearfix"></div>
 
                     <br>
-                    <a href="{{ route('users.edit', Auth::id()) }}" class="btn btn-info text-center">Edit Profile</a>
+
+                    <div class="col-md-3 col-sm-4 col-xs-5 label-design">
+                        <a href="{{ route('users.edit', Auth::id()) }}" class="btn btn-info text-center">Edit Profile</a>
+                    </div>
+
+                    <br>
                 </form>
             </div>
         </div>

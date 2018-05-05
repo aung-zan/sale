@@ -15,6 +15,10 @@ Route::get('/', 'User\UserHomeController@index')                        ->name('
 
 Route::get('/login', 'Auth\UserLoginController@showLoginForm')          ->name('users.loginForm');
 Route::post('/login', 'Auth\UserLoginController@login')                 ->name('users.login');
+Route::post('/logout', 'Auth\UserLoginController@logout')               ->name('users.logout');
+
+Route::get('/signup', 'Auth\UserRegisterController@showRegisterForm')   ->name('users.registerForm');
+Route::post('/signup', 'Auth\UserRegisterController@register')          ->name('users.register');
 
 Route::resource('/users', 'User\ProfileController', ['only' => ['show', 'edit', 'update']]);
 

@@ -5,6 +5,13 @@
         <div class="graphs">
             <div class="sign-in-form">
 
+                @if (\Session::has('error'))
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Oh Snap!</strong>
+                        {{ \Session::get('error') }}
+                    </div>
+                @endif
+
                 <div class="sign-in-form-top">
                     <h1>Log in</h1>
                 </div>
@@ -44,7 +51,7 @@
                     <h2>For New People</h2>
                     <p>Having hands on experience in creating innovative designs,I do offer design
                         solutions which harness.</p>
-                    <a href=" ">Register Now!</a>
+                    <a href="{{ route('users.registerForm') }} ">Register Now!</a>
                 </div>
             </div>
         </div>

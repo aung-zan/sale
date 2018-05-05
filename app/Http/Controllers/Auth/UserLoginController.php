@@ -52,7 +52,8 @@ class UserLoginController extends Controller
         }
 
         return redirect()->back()
-                        ->withInput($request->only('email'));
+                        ->withInput($request->only('email'))
+                        ->with('error', 'Email or password is incorrect!');
     }
 
     /**
@@ -62,6 +63,7 @@ class UserLoginController extends Controller
      */
     public function logout()
     {
-
+        Auth::logout();
+        return redirect('/');
     }
 }
